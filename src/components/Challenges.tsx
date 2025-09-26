@@ -55,40 +55,40 @@ const Challenges = () => {
   ];
 
   return (
-    <section id="challenges" className="py-20 bg-gray-50">
+    <section id="challenges" className="py-24 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
             Испытания
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
           Программа включает разные активности — динамичные и спокойные, чередуя нагрузку.
           </p>
         </div>
 
         {/* Featured Challenges */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
           {challenges.map((challenge, index) => (
-            <div key={index} className="group bg-white border border-gray-200 hover:border-blue-300 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="relative h-48 overflow-hidden">
+            <div key={index} className="group bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-yellow-400/30 hover:border-yellow-400 rounded-2xl shadow-2xl overflow-hidden hover:shadow-yellow-400/50 transition-all duration-300 transform hover:-translate-y-3 hover:scale-105">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={challenge.image}
                   alt={challenge.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <div className={`bg-${challenge.color} p-2 rounded-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <challenge.icon className="h-5 w-5 text-white" />
+                  <div className={`bg-gradient-to-r from-yellow-400 to-red-500 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <challenge.icon className="h-6 w-6 text-black" />
                   </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="p-8">
+                <h3 className="text-2xl font-black text-white mb-3">
                   {challenge.name}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-yellow-300 text-lg font-semibold">
                   {challenge.description}
                 </p>
               </div>
@@ -97,22 +97,22 @@ const Challenges = () => {
         </div>
 
         {/* Additional Challenges */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <div className="bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-purple-400/30 rounded-3xl p-10 shadow-2xl">
+          <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-8 text-center">
             В нашем арсенале также:
           </h3>
           
-          <div className="grid sm:grid-cols-2 gap-4 mb-6">
+          <div className="grid sm:grid-cols-2 gap-6 mb-8">
             {additionalChallenges.map((challenge, index) => (
-              <div key={index} className="flex items-center space-x-3 bg-gray-50 border border-gray-200 p-4 rounded-lg hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                <span className="text-gray-700">{challenge}</span>
+              <div key={index} className="flex items-center space-x-4 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-2 border-purple-400/30 p-6 rounded-xl hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-2 hover:border-purple-400">
+                <div className="w-4 h-4 bg-gradient-to-r from-yellow-400 to-red-500 rounded-full"></div>
+                <span className="text-white font-bold text-lg">{challenge}</span>
               </div>
             ))}
           </div>
           
           <div className="text-center">
-            <p className="text-lg text-orange-600 italic">
+            <p className="text-2xl text-yellow-400 italic font-bold">
               И это далеко не всё — список игр постоянно пополняется.
             </p>
           </div>

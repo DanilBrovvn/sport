@@ -61,13 +61,13 @@ const Gallery = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className="py-24 bg-gradient-to-br from-gray-900 to-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
             Фотогалерея
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
             Посмотрите, как проходят наши мероприятия — энергия, эмоции и командный дух в каждом кадре
           </p>
         </div>
@@ -75,10 +75,10 @@ const Gallery = () => {
         {/* Настольные игры */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
               Настольные игры
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-xl text-blue-300 font-semibold">
               Интеллектуальные развлечения для сплочения команды
             </p>
           </div>
@@ -87,13 +87,13 @@ const Gallery = () => {
             {boardGames.map((image, index) => (
               <div
                 key={index}
-                className="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                className="gallery-item cursor-pointer overflow-hidden rounded-xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 border-2 border-blue-400/30 hover:border-blue-400 transform hover:-translate-y-2 hover:scale-105"
                 onClick={() => openModal(index, 'board')}
               >
                 <img
                   src={image}
                   alt={`Настольные игры ${index + 1}`}
-                  className="w-full h-48 object-cover transition-transform duration-300"
+                  className="w-full h-56 object-cover transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -104,10 +104,10 @@ const Gallery = () => {
         {/* Тимбилдинг */}
         <div className="mb-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-600 mb-6">
               Тимбилдинг
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-xl text-red-300 font-semibold">
               Активные командные испытания и соревнования
             </p>
           </div>
@@ -116,13 +116,13 @@ const Gallery = () => {
             {teamBuilding.map((image, index) => (
               <div
                 key={index}
-                className="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                className="gallery-item cursor-pointer overflow-hidden rounded-xl shadow-2xl hover:shadow-red-500/50 transition-all duration-300 border-2 border-red-400/30 hover:border-red-400 transform hover:-translate-y-2 hover:scale-105"
                 onClick={() => openModal(index, 'team')}
               >
                 <img
                   src={image}
                   alt={`Тимбилдинг ${index + 1}`}
-                  className="w-full h-48 object-cover transition-transform duration-300"
+                  className="w-full h-56 object-cover transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -133,7 +133,7 @@ const Gallery = () => {
         {/* Modal */}
         {isOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center gallery-modal"
+            className="fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center gallery-modal"
             onClick={closeModal}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -142,35 +142,35 @@ const Gallery = () => {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200"
+                className="absolute top-4 right-4 z-10 bg-red-500 hover:bg-red-600 text-white p-3 rounded-full transition-all duration-200 shadow-lg"
               >
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
               </button>
 
               {/* Navigation Buttons */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-600 text-black p-3 rounded-full transition-all duration-200 shadow-lg"
               >
-                <ChevronLeft className="h-6 w-6" />
+                <ChevronLeft className="h-8 w-8" />
               </button>
 
               <button
                 onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-2 rounded-full transition-all duration-200"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-yellow-500 hover:bg-yellow-600 text-black p-3 rounded-full transition-all duration-200 shadow-lg"
               >
-                <ChevronRight className="h-6 w-6" />
+                <ChevronRight className="h-8 w-8" />
               </button>
 
               {/* Image */}
               <img
                 src={allImages[currentImage]}
                 alt={`Мероприятие ${currentImage + 1}`}
-                className="max-w-full max-h-full object-contain rounded-lg"
+                className="max-w-full max-h-full object-contain rounded-xl border-4 border-yellow-400"
               />
 
               {/* Image Counter */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 text-white px-4 py-2 rounded-full">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full font-bold text-lg">
                 {currentImage + 1} / {allImages.length}
               </div>
             </div>

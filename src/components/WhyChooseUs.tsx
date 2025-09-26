@@ -34,36 +34,36 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-gradient-to-br from-gray-900 to-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
             Зачем это нужно
           </h2>
           <div className="max-w-4xl mx-auto">
-            <p className="text-xl text-blue-600 mb-4">
+            <p className="text-2xl text-yellow-400 mb-6 font-bold">
               Тимбилдинг помогает превратить сотрудников в настоящую команду.
             </p>
-            <p className="text-lg text-gray-600">
+            <p className="text-xl text-gray-300 font-semibold">
               Если работа — это матч, то наше мероприятие — тренировка: 
-              <span className="font-semibold text-sky-600"> соревновательная, увлекательная и запоминающаяся.</span>
+              <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-pink-600"> соревновательная, увлекательная и запоминающаяся.</span>
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {reasons.map((reason, index) => (
             <div key={index} className="group">
-              <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <div className={`${reason.bg} w-16 h-16 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300`}>
-                  <reason.icon className="h-8 w-8 text-white" />
+              <div className="bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-yellow-400/30 hover:border-yellow-400 rounded-2xl p-10 shadow-2xl hover:shadow-yellow-400/50 transition-all duration-300 transform hover:-translate-y-3 hover:scale-105 h-full">
+                <div className={`bg-gradient-to-r from-yellow-400 to-red-500 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-all duration-300 shadow-lg`}>
+                  <reason.icon className="h-10 w-10 text-black" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-black text-white mb-6">
                   {reason.title}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-lg font-semibold">
                   {reason.description}
                 </p>
               </div>
@@ -73,16 +73,16 @@ const WhyChooseUs = () => {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-sky-500 rounded-2xl p-8 shadow-lg max-w-2xl mx-auto hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 shadow-2xl max-w-3xl mx-auto hover:shadow-purple-500/50 transition-all duration-300 transform hover:-translate-y-2 border-2 border-yellow-400">
+            <h3 className="text-3xl font-black text-white mb-6">
               Готовы укрепить сплоченность коллектива?
             </h3>
-            <p className="text-white/80 mb-6">
+            <p className="text-white/90 mb-8 text-xl font-semibold">
               Подберём программу под ваши задачи и бюджет
             </p>
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 transform hover:-translate-y-2 hover:scale-105"
             >
               Связаться с нами
             </button>
