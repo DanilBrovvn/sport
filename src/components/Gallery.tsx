@@ -4,85 +4,41 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentSection, setCurrentSection] = useState<'board' | 'team'>('board');
 
-  const images = [
-    'https://i.postimg.cc/0QxjsnVV/photo-10-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/3w2NVVFy/photo-11-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/k4c4XSZq/photo-12-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/RhZ03F5f/photo-13-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/wM4jDpgr/photo-14-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/T2twzrgc/photo-15-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/X7XJ4pg6/photo-16-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/DyDzZnCJ/photo-17-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/rwrwR3bh/photo-18-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/8CgPRwgT/photo-19-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/NFsK1DTK/photo-1-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/s2PfwS37/photo-20-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/rm8Vbmpb/photo-21-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/900WmnZY/photo-22-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Wzyshw7L/photo-23-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/HWvYZT1Z/photo-24-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/MKhWwtT1/photo-25-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/L8Lm8fYw/photo-26-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/jdWsBBss/photo-27-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/PqHTpx1x/photo-28-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/zfk5nrkk/photo-29-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/ZnwCjNFV/photo-2-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/50NJgR7W/photo-30-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/85KS0m9J/photo-31-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/7h5k8TrB/photo-32-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/HnFCpspT/photo-33-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/SQP4LVcH/photo-34-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/VLb8KMRv/photo-35-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/CxTVX1PN/photo-36-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/bwxjhh4j/photo-37-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/d0JcQfKZ/photo-38-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/7LX85Nxs/photo-39-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Qtr9Mhdk/photo-3-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/PxxGY8Jt/photo-40-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/W3fBnbq0/photo-41-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/cCgV5yf2/photo-42-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/44YyTYPk/photo-43-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/tJK8KS5T/photo-44-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/xjBCj9pk/photo-45-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/65RQyFFM/photo-46-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/t4j4P2jp/photo-47-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/6pf5hnWR/photo-48-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/7LPPthhR/photo-49-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/B6c8Lk8W/photo-4-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/vBkQmvhR/photo-50-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/cC3dt8kv/photo-51-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Xv2jRWyY/photo-52-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/FR7rm6jg/photo-53-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/CMnhQWMw/photo-54-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/kXrJ3fDK/photo-55-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/TYrRRgWS/photo-56-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/4xsXny63/photo-57-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/4xPscGPQ/photo-59-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/KcfkZXSB/photo-5-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/TPHxkcZy/photo-60-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Bvvsczw9/photo-61-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/j5wbB7bM/photo-62-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Twz6x32f/photo-63-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/wMDdjY3J/photo-64-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/zDhNjKpB/photo-65-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/sDRr0x0J/photo-66-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/65LXsKkx/photo-67-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/L89M27SY/photo-68-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/rpb6Gwrx/photo-69-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/YqyvW1SS/photo-6-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/9fz5q7rc/photo-70-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/ht2Rjr4C/photo-71-2025-09-23-12-14-40.jpg',
+  const boardGames = [
+    'https://i.postimg.cc/YqyvW1SS/photo_6_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/L89M27SY/photo_68_2025-09-23_12-14-40.jpg',
     'https://i.postimg.cc/ydSMLCm5/photo-72-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Fz52qCGK/photo-73-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Fzy2QbnV/photo-74-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/9Ff40xCS/photo-7-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/9QRrtr4Y/photo-8-2025-09-23-12-14-40.jpg',
-    'https://i.postimg.cc/Dw9mCnLk/photo-9-2025-09-23-12-14-40.jpg'
+    'https://i.postimg.cc/kXrJ3fDK/photo-55-2025-09-23-12-14-40.jpg',
+    'https://i.postimg.cc/9fz5q7rc/photo_70_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/sDRr0x0J/photo_66_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/65LXsKkx/photo_67_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/CMnhQWMw/photo_54_2025-09-23_12-14-40.jpg'
   ];
 
-  const openModal = (index: number) => {
-    setCurrentImage(index);
+  const teamBuilding = [
+    'https://i.postimg.cc/Xv2jRWyY/photo_52_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/B6c8Lk8W/photo_4_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/vBkQmvhR/photo_50_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/cCgV5yf2/photo_42_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/HnFCpspT/photo_33_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/HWvYZT1Z/photo_24_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/900WmnZY/photo_22_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/rwrwR3bh/photo_18_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/wM4jDpgr/photo_14_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/s2PfwS37/photo_20_2025-09-23_12-14-40.jpg',
+    'https://i.postimg.cc/Twz6x32f/photo-63-2025-09-23-12-14-40.jpg',
+    'https://i.postimg.cc/65RQyFFM/photo-46-2025-09-23-12-14-40.jpg'
+  ];
+
+  const allImages = [...boardGames, ...teamBuilding];
+
+  const openModal = (index: number, section: 'board' | 'team') => {
+    const sectionImages = section === 'board' ? boardGames : teamBuilding;
+    const globalIndex = section === 'board' ? index : boardGames.length + index;
+    setCurrentImage(globalIndex);
+    setCurrentSection(section);
     setIsOpen(true);
   };
 
@@ -91,11 +47,11 @@ const Gallery = () => {
   };
 
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
+    setCurrentImage((prev) => (prev + 1) % allImages.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentImage((prev) => (prev - 1 + allImages.length) % allImages.length);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -116,32 +72,62 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="gallery-grid">
-          {images.slice(0, 12).map((image, index) => (
-            <div
-              key={index}
-              className="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
-              onClick={() => openModal(index)}
-            >
-              <img
-                src={image}
-                alt={`Team building activity ${index + 1}`}
-                className="w-full h-48 object-cover transition-transform duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))}
+        {/* Настольные игры */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Настольные игры
+            </h3>
+            <p className="text-lg text-gray-600">
+              Интеллектуальные развлечения для сплочения команды
+            </p>
+          </div>
+
+          <div className="gallery-grid">
+            {boardGames.map((image, index) => (
+              <div
+                key={index}
+                className="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                onClick={() => openModal(index, 'board')}
+              >
+                <img
+                  src={image}
+                  alt={`Настольные игры ${index + 1}`}
+                  className="w-full h-48 object-cover transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Show More Button */}
-        <div className="text-center mt-8">
-          <button
-            onClick={() => openModal(0)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Посмотреть все фото ({images.length})
-          </button>
+        {/* Тимбилдинг */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Тимбилдинг
+            </h3>
+            <p className="text-lg text-gray-600">
+              Активные командные испытания и соревнования
+            </p>
+          </div>
+
+          <div className="gallery-grid">
+            {teamBuilding.map((image, index) => (
+              <div
+                key={index}
+                className="gallery-item cursor-pointer overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                onClick={() => openModal(index, 'team')}
+              >
+                <img
+                  src={image}
+                  alt={`Тимбилдинг ${index + 1}`}
+                  className="w-full h-48 object-cover transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Modal */}
@@ -178,14 +164,14 @@ const Gallery = () => {
 
               {/* Image */}
               <img
-                src={images[currentImage]}
-                alt={`Team building activity ${currentImage + 1}`}
+                src={allImages[currentImage]}
+                alt={`Мероприятие ${currentImage + 1}`}
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
 
               {/* Image Counter */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-20 text-white px-4 py-2 rounded-full">
-                {currentImage + 1} / {images.length}
+                {currentImage + 1} / {allImages.length}
               </div>
             </div>
           </div>

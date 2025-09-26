@@ -13,7 +13,7 @@ const VideoSection = () => {
             Посмотрите, как это происходит
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Взгляните на атмосферу наших меропритий!
+            Взгляните на атмосферу наших мероприятий!
           </p>
         </div>
 
@@ -55,4 +55,3 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-npm run build

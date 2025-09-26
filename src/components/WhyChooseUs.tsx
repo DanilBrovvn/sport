@@ -12,7 +12,7 @@ const WhyChooseUs = () => {
     },
     {
       icon: Gamepad2,
-      title: 'Более 20 игр',
+      title: 'Более 40 активностей',
       description: 'Разнообразная программа с постоянно обновляющимся арсеналом активностей',
       color: 'text-orange-600',
       bg: 'bg-orange-600'
