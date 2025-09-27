@@ -64,10 +64,10 @@ const Gallery = () => {
     <section id="gallery" className="py-24 bg-gradient-to-br from-gray-900 to-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-8">
             Фотогалерея
           </h2>
-          <p className="text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
+          <p className="text-lg sm:text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
             Посмотрите, как проходят наши мероприятия — энергия, эмоции и командный дух в каждом кадре
           </p>
         </div>
@@ -75,10 +75,10 @@ const Gallery = () => {
         {/* Настольные игры */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+            <h3 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
               Настольные игры
             </h3>
-            <p className="text-xl text-blue-300 font-semibold">
+            <p className="text-base sm:text-xl text-blue-300 font-semibold">
               Интеллектуальные развлечения для сплочения команды
             </p>
           </div>
@@ -93,7 +93,7 @@ const Gallery = () => {
                 <img
                   src={image}
                   alt={`Настольные игры ${index + 1}`}
-                  className="w-full h-56 object-cover transition-transform duration-300"
+                  className="w-full h-48 sm:h-56 object-cover transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -104,10 +104,10 @@ const Gallery = () => {
         {/* Тимбилдинг */}
         <div className="mb-12">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-600 mb-6">
+            <h3 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-600 mb-6">
               Тимбилдинг
             </h3>
-            <p className="text-xl text-red-300 font-semibold">
+            <p className="text-base sm:text-xl text-red-300 font-semibold">
               Активные командные испытания и соревнования
             </p>
           </div>
@@ -122,7 +122,7 @@ const Gallery = () => {
                 <img
                   src={image}
                   alt={`Тимбилдинг ${index + 1}`}
-                  className="w-full h-56 object-cover transition-transform duration-300"
+                  className="w-full h-48 sm:h-56 object-cover transition-transform duration-300"
                   loading="lazy"
                 />
               </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Phone, Heart } from 'lucide-react';
+import { Users, Phone, Heart, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -53,6 +53,12 @@ const Footer = () => {
                 <Phone className="h-6 w-6 text-green-400" />
                 <a href="tel:+79202770781" className="text-gray-300 hover:text-green-400 transition-colors text-lg font-semibold">
                   +7 920 277-07-81
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-6 w-6 text-blue-400" />
+                <a href="mailto:Mishev82@mail.ru" className="text-gray-300 hover:text-blue-400 transition-colors text-lg font-semibold break-all">
+                  Mishev82@mail.ru
                 </a>
               </div>
               

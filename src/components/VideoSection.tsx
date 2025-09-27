@@ -9,10 +9,10 @@ const VideoSection = () => {
     <section className="py-24 bg-gradient-to-br from-purple-900 via-black to-red-900 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 animate-fadeInUp">
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-8">
             Посмотрите, как это происходит
           </h2>
-          <p className="text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
+          <p className="text-lg sm:text-2xl text-yellow-300 max-w-3xl mx-auto font-bold">
             Взгляните на атмосферу наших мероприятий!
           </p>
         </div>

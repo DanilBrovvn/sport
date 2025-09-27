@@ -21,26 +21,26 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-8">
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-tight">
             <span className="animate-fadeInUp block">Тимбилдинг для команд</span><br />
-            <span className="animate-fadeInRight text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600">от 10 до 300+ человек</span>
+            <span className="animate-fadeInRight text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-pink-600 text-2xl sm:text-4xl md:text-7xl">от 10 до 300+ человек</span>
           </h1>
           
-          <p className="text-2xl md:text-4xl text-yellow-300 mb-12 font-bold animate-fadeInLeft">
+          <p className="text-xl sm:text-2xl md:text-4xl text-yellow-300 mb-12 font-bold animate-fadeInLeft">
             Энергия, драйв и командный дух
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp">
             <button
               onClick={scrollToAbout}
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 transform hover:-translate-y-2 hover:scale-105"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black px-8 sm:px-12 py-4 sm:py-6 rounded-2xl font-black text-lg sm:text-xl transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 transform hover:-translate-y-2 hover:scale-105"
             >
               Узнать подробнее
             </button>
             
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-4 border-red-500 text-red-400 hover:bg-red-500 hover:text-white px-12 py-6 rounded-2xl font-black text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/50 transform hover:-translate-y-2 hover:scale-105"
+              className="border-4 border-red-500 text-red-400 hover:bg-red-500 hover:text-white px-8 sm:px-12 py-4 sm:py-6 rounded-2xl font-black text-lg sm:text-xl transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/50 transform hover:-translate-y-2 hover:scale-105"
             >
               Связаться с нами
             </button>
